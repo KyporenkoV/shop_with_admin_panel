@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<output>
+    <section class="section-content padding-y bg">
+        <div class="container">
+            <!-- ============================  COMPONENT 5 ======================== -->
+            <article class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <aside class="col-md-6">
+                            <div class="card img-big-wrap">
+                                <img class="img-fluid"
+                                     src="{{ data.img }}">
+                            </div> <!-- card img-big-wrap.// -->
+                        </aside>
+                        <main class="col-md-6">
+                            <article><br>
+                                <h3 class="title">{{ data.name }}</h3><br>
+                                <hr>
+                                <div class="mb-3">
+                                    <h5>Оплата:</h5>
+                                    <ul class="list-dots mb-0">
+                                        <li>Готівкою</li>
+                                        <li>Безготівковими</li>
+                                        <li>VISA/Mastercard</li>
+                                        <li>GooglePay</li>
+                                        <li>ApplePay</li>
+                                    </ul>
+                                </div>
+
+                                <hr>
+                                <div class="mb-3">
+                                    <var class="price h4">Ціна сьогодні: {{ data.price }} грн</var> <br>
+                                    <span class="monthly">Купити в кредит від 1000 грн/міс. <a href="#"
+                                                                                               class="btn-link"> до 12 місяців</a></span>
+                                </div> <!-- price-detail-wrap .// -->
+                                <br>
+                                <div class="d-grid gap-2">
+                                    <a href="/checkout/{{ data.id }}" class="btn btn-primary btn-lg">Купити</a>
+                                    <a href="/" class="btn btn-secondary btn-lg">Переглянути схожі моделі
+                                    </a>
+                                </div>
+
+                            </article> <!-- product-info-aside .// -->
+                        </main> <!-- col.// -->
+                    </div> <!-- row.// -->
+                </div> <!-- card-body.// -->
+            </article> <!-- card.// -->
+            <!-- ================ COMPONENT 5 END .// ================= -->
+
+
+            <br><br>
+
+            <!-- ============================ COMPONENT 4  ================================= -->
+            <article class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <aside class="col-md-6">
+                            <h5>Основні характеристики:</h5>
+                            <dl class="row">
+                                <dt class="col-sm-3">Дисплей</dt>
+                                <dd class="col-sm-9"> {{data.display}}</dd>
+
+                                <dt class="col-sm-3">Процесор</dt>
+                                <dd class="col-sm-9">{{data.processor}}</dd>
+
+                                <dt class="col-sm-3">Камера</dt>
+                                <dd class="col-sm-9"> {{data.camera}}</dd>
+
+                                <dt class="col-sm-3">Пам'ять</dt>
+                                <dd class="col-sm-9"> {{data.memory}}</dd>
+
+                                <dt class="col-sm-3">ОС</dt>
+                                <dd class="col-sm-9"> {{data.os}}</dd>
+                            </dl>
+                        </aside>
+                        <aside class="col-md-6">
+                            <h5>Важливі параметри:</h5>
+                            <dl class="row">
+                                <dt class="col-sm-6">Кількість sim-карт</dt>
+                                <dd class="col-sm-6"> {{data.simcards}}</dd>
+
+                                <dt class="col-sm-6">Безпровідна зарядка</dt>
+                                <dd class="col-sm-6">{{data.charger}}</dd>
+
+                                <dt class="col-sm-6">Матеріал корпуса</dt>
+                                <dd class="col-sm-6"> {{data.material}}</dd>
+
+                                <dt class="col-sm-6">Ємність акумулятора</dt>
+                                <dd class="col-sm-6"> {{data.batery}}</dd>
+
+                                <dt class="col-sm-6">Розміри</dt>
+                                <dd class="col-sm-6"> {{data.sizes}}</dd>
+                            </dl>
+                        </aside>
+                    </div> <!-- row.// -->
+                    <hr>
+                    <p>
+                        {{data.reviev}}
+                    </p>
+                </div> <!-- card-body.// -->
+            </article> <!-- card.// -->
+            <!-- ============================ COMPONENT 4  .//END ================================= -->
+
+
+        </div> <!-- container .//  -->
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+
+</output>
+{% endblock %}

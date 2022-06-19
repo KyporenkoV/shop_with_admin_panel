@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg"
+                 alt="" width="72" height="57">
+            <h2>Інформація про ваше замовлення</h2>
+            <p class="lead">Незабаром наш менеджер з'вяжеться з вами</p>
+        </div>
+        <!--START TABLES GOODS-->
+        <h4 class="mb-3">Товар:</h4>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Назва товару</th>
+                <th scope="col">Кількість</th>
+                <th scope="col">Вартість</th>
+                <th scope="col">Сума</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>{{ current_order['goods_name'] }}</td>
+                <td>1 шт.</td>
+                <td>{{ current_order['goods_price'] }} грн.</td>
+                <td>{{ current_order['goods_price'] }} грн.</td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th scope="col">{{ current_order['goods_price'] }} грн.</th>
+            </tr>
+
+            </tbody>
+        </table>
+        <br>
+        <!--END TABLES GOODS-->
+        <h4 class="mb-3">Доставка:</h4>
+        <!--START TABLES Доставка-->
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Ім'я</td>
+                <td>{{ current_order['firstName'] }}</td>
+            </tr>
+            <tr>
+                <td>Прізвище</td>
+                <td>{{ current_order['lastName'] }}</td>
+            </tr>
+            <tr>
+                <td>Телефон</td>
+                <td>{{ current_order['phone'] }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ current_order['email'] }}</td>
+            </tr>
+            <tr>
+                <td>Адреса</td>
+                <td>{{ current_order['address'] }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <!--END TABLES Доставка-->
+    </main>
+</div>
+<br>
+<div class="d-grid gap-2">
+  <a href="/" class="btn btn-primary" type="button">Повернутись на Головну сторінку</a>
+</div>
+{% endblock %}
